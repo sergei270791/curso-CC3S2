@@ -1,15 +1,16 @@
 ## Practica de entrada
 
-*[Pregunta 1](#PracticaEntrada/Pregunta1)
+# Pregunta 1
+![Codigo 1](/img/pregunta1_codigo.png)
+# Pregunta 2
+![Codigo 2](/img/pregunta2_codigo.png)
+# Pregunta 3
 
-*[Pregunta 2](#insignias)
-
-*[Pregunta 3](#practica-de-entrada)
-
-*[Pregunta 4](#descripción-del-proyecto)
-
-*[Pregunta 5](#Estado-del-proyecto)
-
-*[Pregunta 6](#Características-de-la-aplicación-y-demostración)
+# Pregunta 4
+![Codigo 4](/img/pregunta4_codigo.png)
+# Pregunta 5
+![Codigo 5 incorrecto](/img/pregunta5_codigo_incorrecto.png)
+![Codigo 5 corregido](/img/pregunta5_codigo_incorrecto.png)
+# Pregunta 6
 
 
