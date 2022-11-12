@@ -1,3 +1,5 @@
+import Fase1.Passenger;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
