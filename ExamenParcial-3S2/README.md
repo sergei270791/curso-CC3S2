@@ -20,6 +20,7 @@
 **¿Qué lambda puede reemplazar la clase Secret1 para devolver el mismo valor?**
 
 # Pregunta 2
+
 **1 . Ejecuta el programa y presenta los resultados y explica qué sucede.**
 
 Lo que hace el programa es crear 2 tipos de vuelos uno economico y uno de negocios.
@@ -94,5 +95,41 @@ Ya se ha implementado en el test de la fase 5 y todas las pruebas pasaron y hubo
 ![Codigo](./img/Fase5Test.png)
 ![Codigo](./img/Fase5Coverage.png)
 
+# Pregunta 3
 
+**1 . ¿Cuales son los problemas de este código de prueba?.**
+
+Primero BigDecimal está mal ya que en el constructor de Invoice es un tipo double.
+Además junit5 en las Assertions no tiene assertThat.
+
+**2 . Escribe una versión más legible de este código prueba. Recuerda llamarlo InvoiceTest.java**
+
+Esto se encuentra en la siguiente imagen y también en el código de la pregunta 3.
+
+![Codigo](./img/Pregunta3-2TestCodigo.png)
+![Codigo](./img/Pregunta3-2Test.png)
+
+**3 . Implementa InvoiceBuilder.java. Siéntete libre de personalizar sus constructores.**
+
+Esto se encuentra en el código de la pregunta 3.Y solo agrupe ciertas propiedades y lo puse en el constructor ya que los otros metodos sirve para agregar propiedades a InvoiceBuilder.
+
+**4 . Escribe en una línea una factura compleja. Muestra los resultados**
+
+Esto se encuentra el código de la pregunta 3 y la línea sería:
+Invoice in =new InvoiceBuilder().withAValueOf(2500).withCountry("US").asCompany().build(); 
+
+![Codigo](./img/Pregunta3-4.png)
+
+**5 . Agrega este listado en el código anterior y muestra los resultados**
+
+Esto se encuentra el código de la pregunta 3 y la línea modificada  sería:
+Invoice in =new InvoiceBuilder().withAValueOf(2800).asCompany().fromTheUS();
+
+![Codigo](./img/Pregunta3-5.png)
+
+**6 . Agrega este listado en el código anterior y muestra los resultados**
+
+Copie el listado anterior modificando assertThat por assertEquals y adaptándolo y estos fueron los resultados:
+
+![Codigo](./img/Pregunta3-6.png)
 
