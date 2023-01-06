@@ -149,4 +149,53 @@ git push
 
 con lo anterior podemos detener el contenedor y enviar (push) el Dockerfile al repositorio de GitHub.
 
+nano Jenkinsfile
+
+se abre Jenkinsfile en modo edicion
+
+stage("Package") {
+steps {
+sh "./gradlew build"
+}
+}
+stage("Docker build") {
+steps {
+sh "docker build -t sergei1222/calculador ."
+}
+}
+}
+stage("Docker push") {
+steps {
+sh "docker push sergei1222/calculador"
+}
+}
+stage("Deploy to staging") {
+steps {
+sh "docker run -d --rm -p 8765:8080 --name calculador
+
+sergei1222/calculator"
+}
+}
+
+y se agrega lo anterior
+
+nano acceptance_test.sh
+
+se pone en modo edicion para agregar lo siguiente 
+
+#!/bin/bash
+test $(curl localhost:8765/sum?a=1\&b=2) -eq 3
+
+despues de agregarlo se guarda 
+
+stage("Acceptance test") {
+steps {
+sleep 60
+sh "chmod +x acceptance_test.sh && ./acceptance_test.
+sh"
+
+}
+}
+
+se agrega a jenkins file
 
