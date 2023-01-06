@@ -199,3 +199,10 @@ sh"
 
 se agrega a jenkins file
 
+
+![Codigo 7](./img/pregunta1-7.png)
+
+![Codigo 8](./img/pregunta1-8.png)
+
+segui todos los pasos de la actividad pero me sale esos errores osea como que no encuentra docker como comando, no se si me podria ayudar con eso 
+
