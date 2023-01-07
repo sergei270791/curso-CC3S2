@@ -43,11 +43,13 @@ pipeline {
 		}
 		stage("Docker build") {
 			steps {
-				sh "docker build -t sergei1222/calculador ."
+				
+				sh "docker build -t sergei1222/calculador . "
 			}
 		}
 		stage("Docker push") {
 			steps {
+				sh "docker login --username sergei1222 --password Slobodan123"
 				sh "docker push sergei1222/calculador"
 			}
 		}
@@ -56,16 +58,20 @@ pipeline {
 				sh "docker run -d --rm -p 8765:8080 --name calculador sergei1222/calculador"
 			}
 		}
+		
 		stage("Acceptance test") {
 			steps {
 				sleep 60
-				sh "chmod +x acceptance_test.sh && ./acceptance_test.sh"
+				sh "./gradlew acceptanceTest -Dcalculador.url=http://localhost:8765"
+
 			}
 		}
+		
+	
 	}
 	post {
 		always {
-			sh "docker stop calculator"
+			sh "docker stop calculador"
 		}
 	}
 }

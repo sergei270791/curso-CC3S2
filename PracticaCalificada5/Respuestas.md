@@ -214,6 +214,7 @@ se agrega a jenkins file
 
 ![Codigo 7](./img/pregunta1-7.png)
 
+<<<<<<< HEAD
 Ahora se agregara las pruebas de acceptacion con cucumber, para se haran los pasos de la actividad, creando archivos y carpetas y hasta editando el build
 
 ./gradlew acceptanceTest -Dcalculador.url=http://localhost:8765
@@ -227,4 +228,6 @@ vemos que si funciona luego borramos lo hecho solo para ver en consola para ahor
 
 Con esto acabo la actividad 23
 
+=======
+>>>>>>> 9d94595 (Acabando la actividad 23)
 
