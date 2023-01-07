@@ -26,6 +26,7 @@ Con esto se consulta los registros de contenedor Docker para registry:
 
 
 docker stop registry
+
 docker rm registry
 
 Con estos 2 comandos, primero se detiene el contenedor y luego lo elimina.
@@ -35,7 +36,9 @@ docker run -d -p 443:443 --restart=always --name registry -v `pwd`/certs:/certs 
 Este comando hace lo mismo que se hizo antes pero con la diferencia de que los datos de registro se almacenan como un volumen de Docker en el directorio del sistema de archivos del host dado. Una vez que los certificados estén firmados por la CA o autofirmados, podemos mover el dominio.crt y domain.key en el directorio certs e inicia el registro, que escucha en el puerto seguro del HyperText Transfer Protocol Secure (HTTPS).
 
 docker ps
+
 docker stop registry
+
 docker rm registry
 
 Ahora denuevo ves como esta corriendo este registro para luego detenerlo y eliminarlo.
@@ -51,17 +54,21 @@ Se establecen los certificados y se crea una restricción de acceso limitada a l
 
 
 docker ps
+
 docker stop registry
+
 docker rm registry
 
 Y de nuevo se detiene y se elimina el registro 
 
 mkdir sample
+
 cd sample
 
 Con esto se crea la carpeta sample y se entra en ella 
 
 nano Dockerfile
+
 
 Con este se abre en modo edicion el archivo Dockerfile
 
@@ -124,14 +131,19 @@ nano Dockerfile
 se abre Dockerfile en modo edicion 
 
 FROM openjdk:11-jre
+
 COPY build/libs/calculador-0.0.1-SNAPSHOT.jar app.jar
+
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
 se agrega lo anterior y se guarda 
 
 ./gradlew build
+
 docker build -t calculador .
+
 docker run -p 8081:8080 --name calculador calculador
+
 
 
 Usando los comandos anteriores, creamos la aplicación, creamos la imagen de Docker y ejecutamos el
@@ -202,7 +214,17 @@ se agrega a jenkins file
 
 ![Codigo 7](./img/pregunta1-7.png)
 
+Ahora se agregara las pruebas de acceptacion con cucumber, para se haran los pasos de la actividad, creando archivos y carpetas y hasta editando el build
+
+./gradlew acceptanceTest -Dcalculador.url=http://localhost:8765
+
 ![Codigo 8](./img/pregunta1-8.png)
 
-segui todos los pasos de la actividad pero me sale esos errores osea como que no encuentra docker como comando, no se si me podria ayudar con eso 
+
+vemos que si funciona luego borramos lo hecho solo para ver en consola para ahora si ponerlo en el Jenkinsfile 
+
+![Codigo 9](./img/pregunta1-9.png)
+
+Con esto acabo la actividad 23
+
 
